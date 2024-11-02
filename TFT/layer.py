@@ -18,16 +18,17 @@ class GRU(nn.Module):
         self.linear1 = nn.Linear(input_size, hidden_size)
         self.linear2 = nn.Linear(hidden_size, hidden_size)
 
-        if output_size:
-            self.GLU = GLU(hidden_size, output_size)
-        else:
-            self.GlU = GLU(hidden_size, hidden_size)
+
+        self.GlU = GLU(hidden_size, hidden_size)
 
         self.droput = nn.Dropout(dropout_rate)
 
-        self.layernorm = nn.LayerNorm() 
+        self.layernorm = nn.LayerNorm()
 
-        if context_size is not None:
+        if output_size:
+            self.linear_out = nn.Linear(hidden_size, output_size)
+
+        if context_size:
             self.linear_conext = nn.Linear(context_size, hidden_size, bias=False)
     
     def forward(self, x, context = None):
@@ -37,7 +38,8 @@ class GRU(nn.Module):
         linear2 = self.linear2(linear1)
         ELU = F.elu(linear2)
         output = self.layernorm(x + self.GLU(linear2))
-
+        if self.output_size:
+            output = self.linear_out(output)
         return output
     
 
@@ -56,12 +58,4 @@ class GLU(nn.Module):
         return x
 
 
-class GRU(nn.Module):
-    def __init__(self, input_size , hidden_size, eps):
-        super().__init__()
-        self.linear4 = nn.Linear(input_size, hidden_size)
-        self.linear5 = nn.Linear(input_size, hidden_size)
-    
-    def forward(self, x):
-        return x
     
