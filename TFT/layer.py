@@ -7,6 +7,49 @@ from torch import Tensor
 from torch.nn.parameter import UninitializedParameter
 
 
+class TFT_embeding(nn.Module):
+    def __init__(self,  static_cont_feature_num = None ,                
+                        static_cat_feature_num_list = None , 
+                        history_cont_feature_num = None, 
+                        history_cat_feature_num_list = None,
+                        future_feature_list= None,
+
+                        hidden_size = 64):
+        super().__init__()
+
+        self.static_cont = nn.Embedding(static_cont_feature_num , hidden_size )
+        self.static_cat = nn.ModuleList([
+                nn.Embedding(i , hidden_size ) for i in static_cat_feature_num_list ])
+        
+        self.history_cont = nn.Embedding(history_cont_feature_num , hidden_size )
+        self.history_cat = nn.ModuleList([
+                nn.Embedding(i , hidden_size ) for i in history_cat_feature_num_list ])
+        
+        self.future_feature = nn.Embedding(future_feature_list , hidden_size )
+
+
+        
+        
+
+    def forward(self, static_cont_input, static_cat_input,history_cont_input, history_cat_input, future_input ):
+        static_cont_input = self.static_cont(static_cont_input)
+        static_cat_input = self.static_cat(static_cat_input)
+
+        history_cont_input = self.history_cont(history_cont_input)
+        history_cat_input = self.history_cat (history_cat_input)
+        future_input= self.future_feature(future_input)
+
+        static_input = torch.cat((static_cont_input,static_cat_input), dim=2)
+        history_input = torch.cat((history_cont_input,history_cat_input), dim=2)
+
+        
+
+        return static_input , history_input, future_input
+
+
+
+
+
 
 class GRU(nn.Module):
     def __init__(self, input_size, 
@@ -56,6 +99,19 @@ class GLU(nn.Module):
         linear5 = self.linear5(x)
         x = F.sigmoid(linear4) * linear5
         return x
+
+
+    
+class CatEmbedding(nn.Module):
+    def __init__(self, cat_size , hidden_size):
+        super().__init__()
+        self.embed = nn.Embedding(cat_size,hidden_size)
+
+    def forward(self, x):
+        embed = self.embed(x)
+        return embed
+    
+
 
 
     
