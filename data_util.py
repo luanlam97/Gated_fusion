@@ -55,7 +55,7 @@ def restructure_date_information(df):
     df["Day"] = pd.to_datetime(df['Date']).dt.day
     df["Day"] = df["Day"]- 1
     df["Day of The Week"] = pd.to_datetime(df['Date']).dt.dayofweek
-    print(df["Day of The Week"].min())
+
     df["Week of The Year"] = pd.to_datetime(df['Date']).dt.isocalendar().week
     df["Week of The Year"] = df["Week of The Year"]- 1
     df.drop('Date', axis=1, inplace=True)
@@ -108,7 +108,6 @@ def get_feature_length(df, constant):
     cat_variable =  [variable  for variable, value  in constant.items() if value == 'Categorical']
     num_variable =  [variable  for variable, value  in constant.items() if value == 'Numerical']
     cat_variable_list = []
-
     for variable in cat_variable:
         cat_variable_list.append(len(df[variable].unique()))
 
