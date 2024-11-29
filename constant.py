@@ -24,7 +24,6 @@ class Constant():
             "Open" : "Numerical",
             "High" : "Numerical",
             "Low" : "Numerical",
-            "Adj Close" : "Numerical",
             "Volume" : "Numerical",
             "Month"	 : "Categorical",
             "Day" : "Categorical",
@@ -43,7 +42,7 @@ class Constant():
             }
         
         self.prediction_feature= {
-            "Close" : "Numerical",
+            "Adj Close" : "Numerical",
         }
 
         self.columns_to_scale = ['Open',	'High',	'Low',	'Close',	'Adj Close',	'Volume']

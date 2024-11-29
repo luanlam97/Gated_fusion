@@ -7,19 +7,22 @@ class TFT(nn.Module):
                         history_cont_feature_num = None, 
                         history_cat_feature_num_list = None,
                         future_feature_list= None,
-                        seq_len = None,
+                        history_len = None,
                         future_len = None,
+                        dropout = 0,
+                        num_head = 1,
 
                         hidden_size = 64):
         super().__init__()
         self.future_len = future_len
+        self.seq_len = future_len + history_len
 
         self.tft_embed =  TFT_embedding(static_cat_feature_num_list= static_cat_feature_num_list,
              static_cont_feature_num=static_cont_feature_num,
              history_cat_feature_num_list= history_cat_feature_num_list,
              history_cont_feature_num=history_cont_feature_num,
              future_feature_list=future_feature_list,
-             hidden_size=64)
+             hidden_size=hidden_size)
 
         static_variation_nums_dim = 1 + len(static_cat_feature_num_list)
         history_variation_nums_dim = 1 + len(history_cat_feature_num_list)
@@ -41,11 +44,14 @@ class TFT(nn.Module):
         self.history_lstm = nn.LSTM(hidden_size, hidden_size, num_layers=1, bias=True, batch_first=True)
         self.future_lstm = nn.LSTM(hidden_size, hidden_size, num_layers=1, bias=True, batch_first=True)
 
-        self.InterpAttention =  InterpretableMultiHeadAttention(64,4,seq_len,0)
-        self.gate_add_norm_attention = Gate_Add_Norm(seq_len, hidden_size)
+        self.history_layernorm = nn.LayerNorm(hidden_size, eps = dropout )
+        self.future_layernorm = nn.LayerNorm(hidden_size, eps = dropout )
 
+        self.InterpAttention =  InterpretableMultiHeadAttention(hidden_size,num_head,self.seq_len)
+        self.attention_layernorm = nn.LayerNorm(self.seq_len, eps = dropout )
+
+        self.gate_add_norm_attention = Gate_Add_Norm(self.seq_len, hidden_size)
         self.attention_GRN = GRN(hidden_size, hidden_size)
-
         self.gate_add_norm_last = Gate_Add_Norm(future_len, hidden_size)
 
         self.GLU = GLU(hidden_size, hidden_size)
@@ -69,21 +75,23 @@ class TFT(nn.Module):
         history_variation = self.history_variation(history_input, cs)
         future_variation = self.future_variation(future_input, cs)
 
-        batch, seq_len ,hidden_size = history_variation.size()
         hidden = (ch.unsqueeze(0) ,cc.unsqueeze(0))
  
         history_lstm, (ch,cc) =  self.history_lstm( history_variation ,hidden)
         hidden = (ch,cc)
         future_lstm, (ch,cc) =  self.future_lstm( future_variation ,hidden)
 
+        history_norm = self.history_layernorm(history_lstm)
+        future_norm = self.future_layernorm(future_lstm)
 
-        gate_add_norm_history = self.gate_add_norm_history(x = history_lstm, residual = history_variation)
-        gate_add_norm_future = self.gate_add_norm_future(x = future_lstm, residual = future_variation)
+        gate_add_norm_history = self.gate_add_norm_history(x = history_norm, residual = history_variation)
+        gate_add_norm_future = self.gate_add_norm_future(x = future_norm, residual = future_variation)
         combined = torch.cat([gate_add_norm_history,gate_add_norm_future], dim = 1)
         static_enriched = self.GRN(combined,ce)
 
         attention = self.InterpAttention( static_enriched,static_enriched,static_enriched       )
-        attention_gated =  self.gate_add_norm_attention(attention,static_enriched )
+        attention_norm = self.attention_layernorm(attention)
+        attention_gated =  self.gate_add_norm_attention(attention_norm,static_enriched )
         attention_GRN = self.attention_GRN(attention_gated)
 
         future = future_lstm[:, -self.future_len:, :] 

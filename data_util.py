@@ -91,6 +91,11 @@ def scale_stock_data(stock_df, column):
 
     return out_df, scalar
 
+def stock_quantiles(df, quantiles):
+    result = df.groupby("Stock Name")["Adj Close"].quantile(quantiles).unstack()
+    result.columns = [f"q_{int(q*100)}" for q in quantiles]
+    return result
+
 def one_label_scale_static_df(static_df, static_variables):
     cat_variable =  [variable  for variable, value  in static_variables.items() if value == 'Categorical']
     num_variable =  [variable  for variable, value  in static_variables.items() if value == 'Numerical']

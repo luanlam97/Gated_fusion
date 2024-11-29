@@ -131,11 +131,8 @@ class Gate_Add_Norm(nn.Module):
         self.GLU = GLU(input_size , hidden_size)
     
     def forward(self, x, residual):
-        print('x',   x.size())
-        print('residual',  residual.size())
         gated = self.GLU(x)
 
-        print('gated',gated.size())
         output = self.layernorm(gated + residual)
         return output
 
@@ -164,7 +161,7 @@ class VariationSelection(nn.Module):
     
 
 class InterpretableMultiHeadAttention(nn.Module):
-    def __init__(self, hidden_size,n_head,v_size, dropout):
+    def __init__(self, hidden_size,n_head,v_size):
         super().__init__()
         self.n_head = n_head
         self.hidden_size = hidden_size
@@ -196,7 +193,6 @@ class InterpretableMultiHeadAttention(nn.Module):
         attention_QKV = [   torch.matmul(attention, v)    for  attention in  attention_QK      ]
         attention_QKV = torch.stack(attention_QKV, dim=-1)
         attention_QKV = torch.mean(attention_QKV, dim=-1) 
-        print("attention_QKV", attention_QKV.size())
         return attention_QKV
 
 
