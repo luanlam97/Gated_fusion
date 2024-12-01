@@ -161,13 +161,13 @@ class VariationSelection(nn.Module):
     
 
 class InterpretableMultiHeadAttention(nn.Module):
-    def __init__(self, hidden_size,n_head,v_size):
+    def __init__(self, hidden_size,n_head,v_size, device):
         super().__init__()
         self.n_head = n_head
         self.hidden_size = hidden_size
         self.attention_hidden_size = self.hidden_size//self.n_head
         self.div = self.attention_hidden_size**-0.5
-        self.mask = torch.triu(torch.full((v_size, v_size), float('-inf')), 1)
+        self.mask = torch.triu(torch.full((v_size, v_size), float('-inf')), 1).to(device)
         self.q_linear = nn.ModuleList(
                             [nn.Linear(hidden_size, self.attention_hidden_size)
                              for i in range(self.n_head)]

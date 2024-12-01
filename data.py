@@ -7,6 +7,7 @@ from torch.utils.data import Dataset
 
 class TFT_Dataset(Dataset):
     def __init__(self , stock_df, static_df , constant_variable, history_length = 90, prediction_length = 5, device = 'cuda'):
+        self.device = device
         self.hist_cat_feature = [feature for feature, type in constant_variable.feature_variables.items() if type =='Categorical']
         self.hist_cont_feature = [feature for feature, type in constant_variable.feature_variables.items() if type =='Numerical']
         
@@ -47,15 +48,15 @@ class TFT_Dataset(Dataset):
         future_input = self.future_data[stock_name][idx + self.history_length: idx + self.history_length + self.prediction_length]
         prediction = self.prediction[stock_name][idx+ self.history_length : idx + self.history_length + self.prediction_length]
 
-        static_cont_input = torch.tensor(static_cont_input.values).float()
+        static_cont_input = torch.tensor(static_cont_input.values, device= self.device).float()
  
-        static_cat_input = torch.tensor(static_cat_input.values)
+        static_cat_input = torch.tensor(static_cat_input.values, device= self.device)
         
-        history_cont_input = torch.tensor(history_cont_input).float()
-        history_cat_input = torch.tensor(history_cat_input)
+        history_cont_input = torch.tensor(history_cont_input, device= self.device).float()
+        history_cat_input = torch.tensor(history_cat_input, device= self.device)
 
-        future_input = torch.tensor(future_input)
-        prediction = torch.tensor(prediction)
+        future_input = torch.tensor(future_input , device= self.device)
+        prediction = torch.tensor(prediction, device= self.device)
 
 
       

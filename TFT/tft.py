@@ -11,8 +11,8 @@ class TFT(nn.Module):
                         future_len = None,
                         dropout = 0,
                         num_head = 1,
-
-                        hidden_size = 64):
+                        hidden_size = 64,
+                        device = 'cpu'):
         super().__init__()
         self.future_len = future_len
         self.seq_len = future_len + history_len
@@ -47,7 +47,7 @@ class TFT(nn.Module):
         self.history_layernorm = nn.LayerNorm(hidden_size, eps = dropout )
         self.future_layernorm = nn.LayerNorm(hidden_size, eps = dropout )
 
-        self.InterpAttention =  InterpretableMultiHeadAttention(hidden_size,num_head,self.seq_len)
+        self.InterpAttention =  InterpretableMultiHeadAttention(hidden_size,num_head,self.seq_len, device= device)
         self.attention_layernorm = nn.LayerNorm(self.seq_len, eps = dropout )
 
         self.gate_add_norm_attention = Gate_Add_Norm(self.seq_len, hidden_size)
