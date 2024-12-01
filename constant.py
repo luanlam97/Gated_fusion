@@ -15,12 +15,6 @@ class Constant():
             }
 
         self.feature_variables = {
-            "Positive_Avg" : "Numerical",
-            "Neutral_Avg" : "Numerical",
-            "Negative_Avg" : "Numerical",
-            "Positive_Count" : "Numerical",
-            "Neutral_Count" : "Numerical",
-            "Negative_Count" : "Numerical",
             "Open" : "Numerical",
             "High" : "Numerical",
             "Low" : "Numerical",
@@ -42,7 +36,7 @@ class Constant():
             }
         
         self.prediction_feature= {
-            "Adj Close" : "Numerical",
+            "Adjusted Close" : "Numerical",
         }
 
-        self.columns_to_scale = ['Open',	'High',	'Low',	'Close',	'Adj Close',	'Volume']
+        self.columns_to_scale = ['Open',	'High',	'Low',	'Close',	'Adjusted Close',	'Volume']

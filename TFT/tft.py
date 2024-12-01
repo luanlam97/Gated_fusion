@@ -38,7 +38,6 @@ class TFT(nn.Module):
         self.gate_add_norm_history = Gate_Add_Norm(hidden_size, hidden_size)
         self.gate_add_norm_future = Gate_Add_Norm(hidden_size, hidden_size)
 
-        
         self.GRN = GRN(hidden_size, hidden_size, context_size = hidden_size)
 
         self.history_lstm = nn.LSTM(hidden_size, hidden_size, num_layers=1, bias=True, batch_first=True)
@@ -70,7 +69,6 @@ class TFT(nn.Module):
         ce  = self.ce(static_input)  
         cc  = self.cc(static_input) 
         ch  = self.ch(static_input) 
-
 
         history_variation = self.history_variation(history_input, cs)
         future_variation = self.future_variation(future_input, cs)

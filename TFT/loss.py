@@ -2,6 +2,7 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
+
 class QuantilesLoss(nn.Module):
     def __init__(self, device= 'cpu',quantiles_list = [.1, .5, .9]):
         super().__init__()

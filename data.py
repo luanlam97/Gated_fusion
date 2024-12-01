@@ -7,6 +7,8 @@ from torch.utils.data import Dataset
 
 class TFT_Dataset(Dataset):
     def __init__(self , stock_df, static_df , constant_variable, history_length = 90, prediction_length = 5, device = 'cuda'):
+        self.history_length = history_length
+        self.prediction_length = prediction_length
         self.device = device
         self.hist_cat_feature = [feature for feature, type in constant_variable.feature_variables.items() if type =='Categorical']
         self.hist_cont_feature = [feature for feature, type in constant_variable.feature_variables.items() if type =='Numerical']
@@ -29,10 +31,9 @@ class TFT_Dataset(Dataset):
         
         self.data_index = []
         for name in self.data_cont.keys():
-            for idx in range(252- self.history_length - self.prediction_length ):
-                self.data_index.append( (name, idx)) 
-
-        
+            if len(self.data_cont[name])- self.history_length - self.prediction_length > 0:
+                for idx in range(len(self.data_cont[name])- self.history_length - self.prediction_length ):
+                    self.data_index.append( (name, idx)) 
 
     def __len__(self):
         return len(self.data_index)
@@ -42,7 +43,6 @@ class TFT_Dataset(Dataset):
         static_cont_input = self.static_df[self.static_cont_feature].loc[stock_name]
         static_cat_input = self.static_df[self.static_cat_feature].loc[stock_name]
         
-
         history_cont_input = self.data_cont[stock_name][idx: idx + self.history_length]
         history_cat_input = self.data_cat[stock_name][idx: idx + self.history_length]
         future_input = self.future_data[stock_name][idx + self.history_length: idx + self.history_length + self.prediction_length]
@@ -58,6 +58,4 @@ class TFT_Dataset(Dataset):
         future_input = torch.tensor(future_input , device= self.device)
         prediction = torch.tensor(prediction, device= self.device)
 
-
-      
         return static_cont_input, static_cat_input,history_cont_input, history_cat_input, future_input, prediction

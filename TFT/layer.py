@@ -34,23 +34,18 @@ class TFT_embedding(nn.Module):
                 history_cont_input, 
                 history_cat_input, 
                 future_input):
-        # Static continuous embedding
         static_cont_emb = self.static_cont(static_cont_input)
 
-        # Static categorical embeddings
         static_cat_embs = [emb(static_cat_input[:, i]) 
                         for i, emb in enumerate(self.static_cat)]
         static_cat_emb = torch.stack(static_cat_embs, dim=-1)
 
-        # History continuous embedding
         history_cont_emb = self.history_cont(history_cont_input)
 
-        # History categorical embeddings
         history_cat_embs = [emb(history_cat_input[:, :, i]) 
                                 for i, emb in enumerate(self.history_cat)]
         history_cat_emb = torch.stack(history_cat_embs, dim=-1)
-        
-        # Future features embedding
+
         future_emb =  [emb(future_input[:, :, i]) 
                                 for i, emb in enumerate(self.future_feature)]
         future_emb = torch.stack(future_emb, dim=-1)
@@ -58,10 +53,8 @@ class TFT_embedding(nn.Module):
         static_cont_emb= static_cont_emb.unsqueeze(-1)
         history_cont_emb =history_cont_emb.unsqueeze(-1)
 
-        # Concatenate embeddings
         static_input = torch.cat([static_cont_emb , static_cat_emb], dim=-1)
         history_input = torch.cat([history_cont_emb, history_cat_emb], dim=-1)
-
 
         return static_input, history_input, future_emb
 
@@ -79,7 +72,6 @@ class GRN(nn.Module):
         self.context_size = context_size
         self.linear1 = nn.Linear(input_size, input_size)
         self.linear2 = nn.Linear(input_size, hidden_size)
-
 
         self.GLU = GLU(hidden_size, input_size if output_size else hidden_size)
 
@@ -103,7 +95,7 @@ class GRN(nn.Module):
         linear2 = self.linear2(linear1)
         
         ELU = F.elu(linear2)
-        output = self.layernorm(x + self.GLU(linear2))
+        output = self.layernorm(x + self.GLU(ELU))
         if self.output_size:
             output = self.linear_out(output)
         return output
