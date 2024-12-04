@@ -1,0 +1,409 @@
+,industry,sector,country,beta,marketCap,bookValue,dividendRate,dividendYield,fiveYearAvgDividendYield,debtToEquity
+A,Diagnostics & Research,Healthcare,United States,1.072,39891210240,20.53,0.99,0.0074,0.66,52.787
+AAL,Airlines,Industrials,United States,1.399,9680030720,-7.387,0.0,0.0,1.27,0.0
+AAP,Specialty Retail,Consumer Cyclical,United States,1.194,2744477440,42.34,1.0,0.024300002,2.44,171.801
+AAPL,Consumer Electronics,Technology,United States,1.24,3622499778560,3.767,1.0,0.0042,0.62,209.059
+ABBV,Drug Manufacturers - General,Healthcare,United States,0.613,322113306624,3.413,6.56,0.0359,4.13,1174.815
+ABC,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+ABMD,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+ABT,Medical Devices,Healthcare,United States,0.722,202830151680,22.944,2.2,0.0185,1.65,37.589
+ACN,Information Technology Services,Technology,Ireland,1.245,225760460800,45.242,5.92,0.0163,1.36,14.127
+ADI,Semiconductors,Technology,United States,1.078,110527823872,70.877,3.68,0.0165,1.78,23.07
+ADM,Farm Products,Consumer Defensive,United States,0.722,26022201344,47.041,2.0,0.0379,2.6,52.874
+ADP,Software - Application,Technology,United States,0.795,124620726272,13.119,6.16,0.0201,2.02,176.65
+ADSK,Software - Application,Technology,United States,1.474,63971688448,8.668,0.0,0.0,0.48,105.214
+AEE,Utilities - Regulated Electric,Utilities,United States,0.462,24945854464,44.335,2.68,0.028399998,2.79,152.976
+AEP,Utilities - Regulated Electric,Utilities,United States,0.539,52350881792,49.989,3.72,0.0373,3.53,165.878
+AIZ,Insurance - Property & Casualty,Financial Services,United States,0.568,11580438528,102.291,3.2,0.014099999,1.85,39.627
+AJG,Insurance Brokers,Financial Services,United States,0.727,68199280640,55.533,2.4,0.0077,1.23,70.273
+AKAM,Software - Infrastructure,Technology,United States,0.678,14710227968,31.828,0.0,0.0,0.0,96.999
+ALB,Specialty Chemicals,Basic Materials,United States,1.551,13084441600,68.11,1.62,0.015,1.14,35.334
+ALGN,Medical Instruments & Supplies,Healthcare,United States,1.65,17512871936,52.762,0.0,0.0,0.0,3.235
+ALK,Airlines,Industrials,United States,1.593,6757384704,35.512,0.0,0.0,1.95,137.129
+ALLE,Security & Protection Services,Industrials,Ireland,1.123,12262122496,18.073,1.92,0.0136,1.3,162.864
+ALTR,Software - Infrastructure,Technology,United States,1.439,8997938176,9.852,0.0,0.0,0.0,31.008
+AMAT,Semiconductor Equipment & Materials,Technology,United States,1.551,151129735168,22.853,1.6,0.0086,0.93,35.409
+AMD,Semiconductors,Technology,United States,1.706,230284853248,35.111,0.0,0.0,0.0,3.927
+AME,Specialty Industrial Machinery,Industrials,United States,1.163,45327699968,41.288,1.12,0.0058,0.63,26.778
+AMGN,Drug Manufacturers - General,Healthcare,United States,0.599,149321302016,14.004,9.0,0.0318,2.97,802.418
+AMP,Asset Management,Financial Services,United States,1.334,54794330112,58.784,5.92,0.010299999,1.77,67.402
+AMT,REIT - Specialty,Real Estate,United States,0.842,96874741760,7.793,6.48,0.031,2.42,439.338
+AMZN,Internet Retail,Consumer Cyclical,United States,1.146,2217718841344,24.655,0.0,0.0,0.0,61.175
+ANET,Computer Hardware,Technology,United States,1.077,129043513344,29.366,0.0,0.0,0.0,0.755
+AON,Insurance Brokers,Financial Services,Ireland,0.909,84237451264,28.841,2.7,0.0069,0.78,274.699
+AOS,Specialty Industrial Machinery,Industrials,United States,1.169,10752794624,13.219,1.36,0.0183,1.73,7.471
+APA,Oil & Gas E&P,Energy,United States,3.246,8270164992,13.825,1.0,0.0442,2.7,105.032
+APD,Specialty Chemicals,Basic Materials,United States,0.826,74539220992,76.534,7.08,0.0212,2.26,79.822
+APH,Electronic Components,Technology,United States,1.238,88281997312,7.842,0.66,0.0091,0.94,57.565
+ARE,REIT - Office,Real Estate,United States,1.176,19186808832,105.766,5.2,0.047199998,3.18,58.757
+ATVI,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+AVB,REIT - Residential,Real Estate,United States,0.985,33165750272,83.667,6.8,0.028900001,3.4,71.946
+AVY,Packaging & Containers,Consumer Cyclical,United States,0.896,16540109824,29.76,3.52,0.0171,1.59,131.956
+AWK,Utilities - Regulated Water,Utilities,United States,0.698,26705825792,53.167,3.06,0.0223,1.72,129.608
+AXP,Credit Services,Financial Services,United States,1.214,212693073920,42.197,2.8,0.0092,1.27,186.815
+AZO,Specialty Retail,Consumer Cyclical,United States,0.713,53689917440,-280.611,0.0,0.0,0.0,0.0
+BA,Aerospace & Defense,Industrials,United States,1.572,117284823040,-38.123,0.0,0.0,2.48,0.0
+BAC,Banks - Diversified,Financial Services,United States,1.325,362811031552,35.371,1.04,0.0219,2.45,0.0
+BAX,Medical Instruments & Supplies,Healthcare,United States,0.604,17178733568,15.421,0.68,0.0202,1.98,166.129
+BBY,Specialty Retail,Consumer Cyclical,United States,1.493,19523870720,14.174,3.76,0.0404,3.46,131.896
+BDX,Medical Instruments & Supplies,Healthcare,United States,0.45,64387485696,89.47,3.89,0.0175,1.38,77.612
+BEN,Asset Management,Financial Services,United States,1.402,11858461696,23.889,1.24,0.0545,4.58,25.715
+BF-A,Beverages - Wineries & Distilleries,Consumer Defensive,United States,0.759,19731748864,7.331,0.91,0.0219,1.26,91.429
+BHI,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+BIIB,Drug Manufacturers - General,Healthcare,United States,-0.061,23946004480,112.278,0.0,0.0,0.0,40.656
+BIO,Medical Devices,Healthcare,United States,0.936,9424585728,267.465,0.0,0.0,0.0,18.538
+BK,Banks - Diversified,Financial Services,United States,1.06,59006017536,51.781,1.88,0.023,2.96,0.0
+BLK,Asset Management,Financial Services,United States,1.311,151161651200,278.317,20.4,0.0199,2.44,32.503
+BMRA,Medical Devices,Healthcare,United States,-1.137,7049932,0.318,0.0,0.0,0.0,13.225
+BMY,Drug Manufacturers - General,Healthcare,United States,0.441,121762955264,8.453,2.4,0.0405,3.43,299.052
+BR,Information Technology Services,Technology,United States,1.06,27368390656,18.874,3.52,0.0149,1.63,172.353
+BRK-A,Insurance - Diversified,Financial Services,United States,0.871,1029050466304,437445.53,0.0,0.0,0.0,19.707
+BSHI,Footwear & Accessories,Consumer Cyclical,United States,0.0,19829622,28.533,0.0,0.0,0.0,0.0
+BSX,Medical Devices,Healthcare,United States,0.797,133425225728,14.054,0.0,0.0,0.0,53.722
+BWA,Auto Parts,Consumer Cyclical,United States,1.186,7501409792,28.148,0.44,0.0128,1.64,74.606
+BXP,REIT - Office,Real Estate,United States,1.195,14421803008,36.455,3.92,0.0478,4.82,205.408
+C,Banks - Diversified,Financial Services,United States,1.426,134913032192,101.907,2.18,0.0308,3.77,0.0
+CAG,Packaged Foods,Consumer Defensive,United States,0.332,13315916800,18.219,1.4,0.0508,3.58,100.881
+CAH,Medical Distribution,Healthcare,United States,0.616,29729992704,-13.541,2.02,0.0165,2.98,0.0
+CAT,Farm & Heavy Construction Machinery,Industrials,United States,1.095,194202271744,40.176,5.64,0.0139,2.15,195.336
+CB,Insurance - Property & Casualty,Financial Services,Switzerland,0.681,117546278912,163.155,3.64,0.0126,1.75,31.706
+CCI,REIT - Specialty,Real Estate,United States,0.875,45874106368,12.175,6.26,0.0589,4.08,559.592
+CDE,Gold,Basic Materials,United States,1.649,2487190272,2.713,0.0,0.0,0.87,56.272
+CDNS,Software - Application,Technology,United States,1.02,85219000320,16.639,0.0,0.0,0.0,61.911
+CF,Agricultural Inputs,Basic Materials,United States,0.957,15844521984,29.795,2.0,0.0223,2.38,42.006
+CFG,Banks - Regional,Financial Services,United States,1.32,20732571648,51.256,1.68,0.0349,4.59,0.0
+CHD,Household & Personal Products,Consumer Defensive,United States,0.55,27307966464,17.122,1.14,0.010299999,1.15,57.536
+CHRW,Integrated Freight & Logistics,Industrials,United States,0.842,12548642816,13.889,2.48,0.0235,2.41,116.88
+CHTR,Telecom Services,Communication Services,United States,1.036,56070262784,99.152,0.0,0.0,0.0,533.472
+CINF,Insurance - Property & Casualty,Financial Services,United States,0.666,24683016192,88.317,3.24,0.020299999,2.56,6.331
+CL,Household & Personal Products,Consumer Defensive,United States,0.415,79446663168,0.532,2.0,0.0207,2.31,1009.091
+CLX,Household & Personal Products,Consumer Defensive,United States,0.399,20602109952,0.485,4.88,0.0292,2.86,1287.5
+CME,Financial Data & Stock Exchanges,Financial Services,United States,0.559,84933017600,78.474,4.6,0.019299999,3.27,13.621
+CMG,Restaurants,Consumer Cyclical,United States,1.266,83222552576,2.65,0.0,0.0,0.0,124.061
+CMI,Specialty Industrial Machinery,Industrials,United States,0.971,51766317056,75.192,7.28,0.0194,2.57,72.251
+CNC,Healthcare Plans,Healthcare,United States,0.493,30314616832,53.535,0.0,0.0,0.0,64.231
+CNP,Utilities - Regulated Electric,Utilities,United States,0.917,20910194688,16.165,0.84,0.025799999,3.06,188.828
+CNWT,Software - Application,Technology,United States,2.628,245354,0.029,0.0,0.0,0.0,103.688
+COO,Medical Instruments & Supplies,Healthcare,United States,0.99,20473237504,39.804,0.02,0.0002,0.02,36.711
+COP,Oil & Gas E&P,Energy,United States,1.22,137324339200,43.34,3.12,0.028800001,2.66,36.695
+COST,Discount Stores,Consumer Defensive,United States,0.789,432023732224,53.308,4.64,0.0047999998,0.68,42.118
+COTY,Household & Personal Products,Consumer Defensive,United States,1.914,6650929152,4.661,0.0,0.0,4.28,94.436
+COWN,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+CPB,Packaged Foods,Consumer Defensive,United States,0.181,13749859328,12.732,1.48,0.032,3.11,198.683
+CPICQ,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+CPRT,Specialty Business Services,Industrials,United States,1.271,59900092416,7.813,0.0,0.0,0.0,1.573
+CRM,Software - Application,Technology,United States,1.288,316087107584,60.16,1.6,0.0047999998,0.0,21.148
+CSCO,Communication Equipment,Technology,United States,0.0,237114867712,11.348,1.6,0.027,3.07,70.647
+CTAS,Specialty Business Services,Industrials,United States,1.313,89766297600,9.972,1.56,0.0069,0.97,70.573
+CTSH,Information Technology Services,Technology,United States,1.052,40187043840,29.137,1.2,0.0149,1.46,12.891
+CUK,Leisure,Consumer Cyclical,United States,2.668,29383905280,6.785,0.0,0.0,4.56,352.355
+D,Utilities - Regulated Electric,Utilities,United States,0.596,48966365184,31.17,2.67,0.0454,4.46,156.351
+DAL,Airlines,Industrials,United States,1.341,40868872192,21.285,0.6,0.0094,2.3,186.78
+DE,Farm & Heavy Construction Machinery,Industrials,United States,0.935,126650753024,84.291,5.88,0.0145000005,1.31,288.043
+DFS,Credit Services,Financial Services,United States,1.402,45003898880,68.765,2.8,0.0153,2.28,105.313
+DG,Discount Stores,Consumer Defensive,United States,0.449,17095093248,33.014,2.36,0.0305,1.14,250.873
+DGX,Diagnostics & Research,Healthcare,United States,0.891,18094499840,60.795,3.0,0.0184,1.9,100.708
+DHI,Residential Construction,Consumer Cyclical,United States,1.744,53938528256,78.119,1.6,0.0095,0.96,22.915
+DIS,Entertainment,Communication Services,United States,1.398,212385923072,55.409,0.9,0.0082,1.38,45.188
+DLTR,Discount Stores,Consumer Defensive,United States,0.874,15704096768,34.326,0.0,0.0,0.0,146.319
+DOV,Specialty Industrial Machinery,Industrials,United States,1.218,28172500992,41.533,2.06,0.01,1.45,59.444
+DPZ,Restaurants,Consumer Cyclical,United States,0.859,16123681792,-112.88,6.04,0.0127,1.02,0.0
+DRE,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+DRI,Restaurants,Consumer Cyclical,United States,1.309,20209412096,18.167,5.6,0.0318,2.86,326.282
+DTE,Utilities - Regulated Electric,Utilities,United States,0.683,25679501312,55.973,4.08,0.0324,3.34,213.847
+DVA,Medical Care Facilities,Healthcare,United States,0.887,13431019520,4.68,0.0,0.0,0.0,549.552
+DXCM,Medical Devices,Healthcare,United States,1.173,31033520128,5.067,0.0,0.0,0.0,130.935
+EA,Electronic Gaming & Multimedia,Communication Services,United States,0.781,43484864512,28.151,0.76,0.0046,0.0,29.954
+EBAY,Internet Retail,Consumer Cyclical,United States,1.337,30743668736,11.245,1.08,0.0171,1.64,145.0
+ECL,Specialty Chemicals,Basic Materials,United States,1.141,70320447488,23.458,2.28,0.0092,1.05,103.915
+ED,Utilities - Regulated Electric,Utilities,United States,0.353,34450472960,63.289,3.32,0.033,3.67,120.07
+EFX,Consulting Services,Industrials,United States,1.594,32102946816,39.621,1.56,0.006,0.78,108.422
+EIX,Utilities - Regulated Electric,Utilities,United States,0.935,33501069312,36.208,3.12,0.0356,4.24,202.126
+EL,Household & Personal Products,Consumer Defensive,United States,1.044,27934234624,14.162,1.4,0.0194,1.25,196.892
+EMN,Specialty Chemicals,Basic Materials,United States,1.459,12081612800,48.8,3.24,0.0309,3.26,90.817
+EMR,Specialty Industrial Machinery,Industrials,United States,1.292,76215779328,37.945,2.11,0.0159,2.38,30.376
+ENS,Electrical Equipment & Parts,Industrials,United States,1.246,3892822784,46.166,0.96,0.0099,0.91,67.021
+EOG,Oil & Gas E&P,Energy,United States,1.289,73866559488,52.369,3.9,0.0293,2.44,13.911
+EQIX,REIT - Specialty,Real Estate,United States,0.701,93082165248,140.826,17.04,0.0174,1.68,140.964
+EQR,REIT - Residential,Real Estate,United States,0.913,29744592896,28.566,2.7,0.0352,3.68,76.033
+ES,Utilities - Regulated Electric,Utilities,United States,0.622,23385161728,41.343,2.86,0.044299997,3.24,187.768
+ESS,REIT - Residential,Real Estate,United States,0.897,20407629824,84.55,9.8,0.031600002,3.37,113.371
+EW,Medical Devices,Healthcare,United States,1.12,41988603904,16.184,0.0,0.0,0.0,7.353
+EXR,REIT - Industrial,Real Estate,United States,0.886,37457874944,66.093,6.48,0.0379,3.27,81.828
+F,Auto Manufacturers,Consumer Cyclical,United States,1.636,43579559936,11.15,0.6,0.0539,5.76,359.359
+FANG,Oil & Gas E&P,Energy,United States,1.875,51381301248,127.856,8.29,0.0467,3.84,33.574
+FAST,Industrial Distribution,Industrials,United States,0.979,47411118080,6.279,1.56,0.0187,2.23,14.644
+FBHS,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+FCX,Copper,Basic Materials,United States,1.91,62571114496,12.212,0.6,0.0136,3.73,33.531
+FDX,Integrated Freight & Logistics,Industrials,United States,1.177,72714739712,111.23,5.52,0.0182,1.62,0.0
+FE,Utilities - Regulated Electric,Utilities,United States,0.495,24014223360,21.563,1.7,0.04,4.14,173.13
+FFIV,Software - Infrastructure,Technology,United States,1.05,14770368512,53.867,0.0,0.0,0.0,6.895
+FIS,Information Technology Services,Technology,United States,1.074,45959016448,30.514,1.44,0.016900001,1.96,66.387
+FISV,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+FITB,Banks - Regional,Financial Services,United States,1.231,31937259520,27.604,1.48,0.0308,3.8,0.0
+FLS,Specialty Industrial Machinery,Industrials,United States,1.399,7991480832,15.671,0.84,0.0138,2.24,68.007
+FLT,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+FMBM,Banks - Regional,Financial Services,United States,0.0,72872904,22.471,1.04,0.0502,4.63,0.0
+FMC,Agricultural Inputs,Basic Materials,United States,0.853,7459785216,36.911,2.32,0.039300002,2.32,90.927
+FN,Electronic Components,Technology,Cayman Islands,0.947,8453322240,50.364,0.0,0.0,0.0,0.266
+FPLPF,Credit Services,Financial Services,United Kingdom,1.49,175819104,2.08,0.07,0.1084,0.0,469.756
+FRC,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+FRMC,Oil & Gas E&P,Energy,United States,17.598,186567,-0.007,0.0,0.0,0.0,0.0
+FRT,REIT - Retail,Real Estate,United States,1.258,9847120896,34.745,4.4,0.0377,4.23,135.474
+FTI,Oil & Gas Equipment & Services,Energy,United States,1.517,13364412416,7.661,0.2,0.0064,0.0,58.911
+GD,Aerospace & Defense,Industrials,United States,0.614,75899691008,83.682,5.68,0.02,2.32,48.609
+GE,Aerospace & Defense,Industrials,United States,1.188,195136897024,17.439,1.12,0.0061000003,0.38,110.224
+GGG,Specialty Industrial Machinery,Industrials,United States,0.814,15319760896,14.887,1.02,0.0112,1.16,1.861
+GILD,Drug Manufacturers - General,Healthcare,United States,0.192,117168070656,14.827,3.08,0.033299997,4.02,126.415
+GIS,Packaged Foods,Consumer Defensive,United States,0.107,37251166208,16.689,2.4,0.036199998,3.19,139.823
+GM,Auto Manufacturers,Consumer Cyclical,United States,1.414,60560470016,64.486,0.48,0.0086,4.06,174.581
+GOOG,Internet Content & Information,Communication Services,United States,1.034,2110963187712,25.613,0.8,0.0047,0.0,9.324
+GPC,Auto Parts,Consumer Cyclical,United States,0.933,17757163520,33.769,4.0,0.031600002,2.74,127.177
+GPN,Specialty Business Services,Industrials,United States,0.979,30181066752,89.667,1.0,0.0084,0.66,74.476
+GRMN,Scientific & Technical Instruments,Technology,Switzerland,0.983,40993492992,39.069,3.0,0.014099999,2.32,1.908
+GS-PJ,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+GWW,Industrial Distribution,Industrials,United States,1.151,58100264960,71.919,8.2,0.0068,1.27,83.325
+HAL,Oil & Gas Equipment & Services,Energy,United States,1.905,27791259648,11.727,0.68,0.021300001,2.02,83.993
+HAS,Leisure,Consumer Cyclical,United States,0.619,9017344000,9.228,2.8,0.043,3.84,305.016
+HBAN,Banks - Regional,Financial Services,United States,1.057,25817886720,12.536,0.62,0.0344,4.79,0.0
+HBI,Apparel Manufacturing,Consumer Cyclical,United States,1.583,3149870848,0.425,0.0,0.0,5.02,2396.086
+HCA,Medical Care Facilities,Healthcare,United States,1.689,83042156544,-8.573,2.64,0.0081,0.83,5711.069
+HD,Home Improvement Retail,Consumer Cyclical,United States,1.011,425119612928,5.839,9.0,0.021,2.3,1095.368
+HES,Oil & Gas E&P,Energy,United States,1.16,45293346816,35.236,2.0,0.0136,1.39,81.969
+HII,Aerospace & Defense,Industrials,United States,0.548,7684937728,107.414,5.4,0.0273,2.19,67.095
+HLT,Lodging,Consumer Cyclical,United States,1.307,61083955200,-14.186,0.6,0.0023999999,0.8,0.0
+HOLX,Medical Instruments & Supplies,Healthcare,United States,0.986,17955571712,21.335,0.0,0.0,0.0,49.407
+HON,Conglomerates,Industrials,United States,1.025,149569814528,26.768,4.52,0.0194,2.01,177.821
+HPE,Communication Equipment,Technology,United States,1.206,27629203456,17.004,0.52,0.024500001,3.36,53.696
+HPQ,Computer Hardware,Technology,United States,1.087,35164393472,-1.444,1.1,0.028199999,3.19,0.0
+HRB,Personal Services,Consumer Cyclical,United States,0.684,8108332032,-2.686,1.5,0.0253,3.97,0.0
+HRL,Packaged Foods,Consumer Defensive,United States,0.254,17616193536,14.347,1.16,0.0358,2.46,36.305
+HSIC,Medical Distribution,Healthcare,United States,0.867,9609202688,27.989,0.0,0.0,0.0,60.189
+HST,REIT - Hotel & Motel,Real Estate,United States,1.344,13019205632,9.602,0.8,0.0434,4.49,81.953
+HSY,Confectioners,Consumer Defensive,United States,0.374,35605381120,20.781,5.48,0.0311,2.06,134.227
+HTLF,Banks - Regional,Financial Services,United States,0.939,2899478016,47.329,1.2,0.0178,2.45,0.0
+HUM,Healthcare Plans,Healthcare,United States,0.52,35312541696,145.875,3.54,0.0119,0.72,75.908
+IBM,Information Technology Services,Technology,United States,0.71,210412208128,26.44,6.68,0.0294,4.69,245.112
+ICE,Financial Data & Stock Exchanges,Financial Services,United States,1.092,91079516160,47.444,1.8,0.0112,1.24,78.899
+IDXX,Diagnostics & Research,Healthcare,United States,1.357,35234164736,19.723,0.0,0.0,0.0,61.696
+IEX,Specialty Industrial Machinery,Industrials,United States,0.952,17582358528,50.315,2.76,0.012,1.12,55.059
+IFF,Specialty Chemicals,Basic Materials,United States,1.238,23329064960,57.783,1.6,0.0175,2.84,66.117
+ILMN,Diagnostics & Research,Healthcare,United States,1.131,23031099392,13.449,0.0,0.0,0.0,125.835
+INTH,Internet Content & Information,Communication Services,United States,516.306,1648,0.22,0.0,0.0,0.0,0.0
+INTU,Software - Application,Technology,United States,1.246,177307811840,65.78,4.16,0.0061000003,0.61,0.0
+IP,Packaging & Containers,Consumer Cyclical,United States,0.988,20278204416,24.839,1.85,0.031400003,4.68,69.707
+IPGP,Semiconductor Equipment & Materials,Technology,United States,0.985,3451630848,48.895,0.0,0.0,0.0,0.778
+IR,Specialty Industrial Machinery,Industrials,United States,1.422,42292080640,25.455,0.08,0.0008,0.0,47.256
+IRM,REIT - Specialty,Real Estate,United States,1.023,35881689088,-0.883,2.86,0.0231,5.47,0.0
+ISRG,Medical Instruments & Supplies,Healthcare,United States,1.389,193581514752,43.749,0.0,0.0,0.0,0.0
+IT,Information Technology Services,Technology,United States,1.322,40037298176,13.737,0.0,0.0,0.0,282.147
+ITW,Specialty Industrial Machinery,Industrials,United States,1.109,82217426944,11.483,6.0,0.0216,2.23,246.05
+IVZ,Asset Management,Financial Services,United States,1.424,8130369536,23.905,0.82,0.045300003,5.16,5.597
+JBHT,Integrated Freight & Logistics,Industrials,United States,1.141,19206242304,39.673,1.72,0.0091,0.84,47.555
+JCI,Building Products & Equipment,Industrials,Ireland,1.306,55438131200,24.197,1.48,0.0176,2.25,54.68
+JKHY,Information Technology Services,Technology,United States,0.636,12803699712,26.385,2.2,0.0125,1.13,10.28
+JNJ,Drug Manufacturers - General,Healthcare,United States,0.518,373372190720,29.144,4.96,0.032,2.72,50.958
+JNPR,Communication Equipment,Technology,United States,0.921,11796701184,14.031,0.88,0.024500001,2.89,39.109
+JPM,Banks - Diversified,Financial Services,United States,1.091,694232416256,115.15,5.0,0.02,2.75,0.0
+K,Packaged Foods,Consumer Defensive,United States,0.395,27789551616,10.589,2.28,0.027999999,3.58,173.603
+KACPF,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+KEY,Banks - Regional,Financial Services,United States,1.231,18987274240,14.479,0.82,0.0421,5.0,0.0
+KEYS,Scientific & Technical Instruments,Technology,United States,0.981,29637668864,30.141,0.0,0.0,0.0,38.929
+KGNR,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+KHC,Packaged Foods,Consumer Defensive,United States,0.475,38191636480,39.974,1.6,0.05,4.55,41.451
+KIM,REIT - Retail,Real Estate,United States,1.485,17133144064,15.611,1.0,0.039100002,4.75,78.638
+KMB,Household & Personal Products,Consumer Defensive,United States,0.412,46504480768,3.853,4.88,0.035,3.4,517.798
+KMX,Auto & Truck Dealerships,Consumer Cyclical,United States,1.686,12964569088,39.783,0.0,0.0,0.0,314.637
+KO,Beverages - Non-Alcoholic,Consumer Defensive,United States,0.62,275732463616,6.153,1.94,0.030299999,3.02,167.358
+KR,Grocery Stores,Consumer Defensive,United States,0.471,43521298432,12.338,1.28,0.021,2.02,229.201
+KSS,Department Stores,Consumer Cyclical,United States,1.971,1719672704,35.072,2.0,0.1091,6.4,195.248
+LBTYA,Telecom Services,Communication Services,Bermuda,1.178,5056532992,51.918,0.0,0.0,0.0,103.004
+LDOS,Information Technology Services,Technology,United States,0.688,21858994176,34.604,1.6,0.0097,1.36,110.135
+LEG,"Furnishings, Fixtures & Appliances",Consumer Cyclical,United States,1.092,1707561088,5.518,0.2,0.0159,5.64,279.9
+LH,Diagnostics & Research,Healthcare,United States,1.036,20231827456,97.613,2.88,0.0119,0.0,95.001
+LKQ,Auto Parts,Consumer Cyclical,United States,1.286,10198231040,23.867,1.2,0.0305,0.0,92.384
+LMT,Aerospace & Defense,Industrials,United States,0.481,123234508800,30.508,13.2,0.0249,2.61,268.347
+LNC,Insurance - Life,Financial Services,United States,1.783,6006294016,47.123,1.8,0.0506,4.58,71.918
+LNT,Utilities - Regulated Electric,Utilities,United States,0.574,16083510272,27.155,1.92,0.0304,3.09,153.258
+LOW,Home Improvement Retail,Consumer Cyclical,United States,1.098,154001883136,-26.22,4.6,0.016900001,1.68,0.0
+LRCX,Semiconductor Equipment & Materials,Technology,United States,1.486,100998742016,6.557,0.92,0.0125,1.14,58.827
+LUV,Airlines,Industrials,United States,1.153,19824308224,17.359,0.72,0.0222,1.03,87.36
+LVS,Resorts & Casinos,Consumer Cyclical,United States,1.117,39952556032,4.726,0.8,0.0150999995,4.75,384.206
+LYB,Specialty Chemicals,Basic Materials,United States,1.091,26626824192,42.236,5.36,0.0643,5.22,92.277
+LYV,Entertainment,Communication Services,United States,1.334,32091133952,1.256,0.0,0.0,0.0,419.155
+MAA,REIT - Residential,Real Estate,United States,0.874,19566856192,50.895,5.88,0.0358,3.18,79.953
+MAR,Lodging,Consumer Cyclical,United States,1.585,79544090624,-8.69,2.52,0.0087,1.29,0.0
+MCD,Restaurants,Consumer Cyclical,United States,0.735,209285300224,-7.224,7.08,0.0239,2.25,0.0
+MCHP,Semiconductors,Technology,United States,1.526,37794762752,11.687,1.82,0.026700001,1.54,102.895
+MCK,Medical Distribution,Healthcare,United States,0.436,78855127040,-23.767,2.84,0.0045,0.71,0.0
+MCO,Financial Data & Stock Exchanges,Financial Services,United States,1.289,90262872064,21.547,3.4,0.0068,0.81,197.861
+MDLZ,Confectioners,Consumer Defensive,United States,0.561,87285907456,20.83,1.88,0.028900001,2.19,73.232
+MDT,Medical Devices,Healthcare,Ireland,0.853,110918090752,38.292,2.8,0.032,2.65,57.859
+MET,Insurance - Life,Financial Services,United States,1.039,60188405760,44.525,2.18,0.0247,3.34,151.463
+MGM,Resorts & Casinos,Consumer Cyclical,United States,2.241,11418328064,10.886,0.0,0.0,0.81,841.031
+MHK,"Furnishings, Fixtures & Appliances",Consumer Cyclical,United States,1.389,8605327360,124.398,0.0,0.0,0.0,32.986
+MKTX,Capital Markets,Financial Services,United States,1.053,10049358848,36.747,2.96,0.0114,0.86,5.424
+MLM,Building Materials,Basic Materials,United States,0.897,36195971072,150.021,3.16,0.0053,0.7,48.348
+MMC,Insurance Brokers,Financial Services,United States,0.937,114505080832,27.876,3.26,0.0139999995,1.42,106.462
+MMM,Conglomerates,Industrials,United States,1.001,72344666112,8.524,2.8,0.021,4.34,295.441
+MNST,Beverages - Non-Alcoholic,Consumer Defensive,United States,0.742,53532323840,5.943,0.0,0.0,0.0,13.985
+MO,Tobacco,Consumer Defensive,United States,0.67,96849920000,-2.044,4.08,0.070700005,8.01,0.0
+MOS,Agricultural Inputs,Basic Materials,United States,1.36,8759060480,37.149,0.84,0.0317,1.43,35.767
+MPC,Oil & Gas Refining & Marketing,Energy,United States,1.371,50602696704,58.255,3.64,0.0233,3.41,114.328
+MRCR,Engineering & Construction,Industrials,United States,0.065,12544647,2.412,0.0,0.0,0.0,13.327
+MRK,Drug Manufacturers - General,Healthcare,United States,0.411,257981546496,17.576,3.24,0.0319,2.9,85.572
+MRO,Oil & Gas E&P,Energy,United States,2.161,15971154944,20.456,0.44,0.0154,1.61,41.565
+MS-PF,Capital Markets,Financial Services,United States,1.336,65476251648,58.246,1.76,0.0694,6.41,405.772
+MSCI,Financial Data & Stock Exchanges,Financial Services,United States,1.11,47734784000,-9.583,6.4,0.0105,0.88,0.0
+MSFT,Software - Infrastructure,Technology,United States,0.904,3204173004800,38.693,3.32,0.0078,0.87,33.657
+MSI,Communication Equipment,Technology,United States,0.979,83083886592,7.945,4.36,0.0087,1.29,490.007
+MU,Semiconductors,Technology,United States,1.179,109946650624,40.695,0.46,0.0047,0.33,31.194
+NCLH,Travel Services,Consumer Cyclical,United States,2.682,12457631744,2.582,0.0,0.0,0.0,1240.664
+NCTKF,Specialty Industrial Machinery,Industrials,Japan,0.7,1915251712,2152.245,0.52,0.0383,1.63,15.776
+NDAQ,Financial Data & Stock Exchanges,Financial Services,United States,0.96,46974377984,19.264,0.96,0.0116,1.39,93.096
+NEE,Utilities - Regulated Electric,Utilities,United States,0.561,158209130496,24.339,2.06,0.026199998,2.25,139.015
+NEOG,Diagnostics & Research,Healthcare,United States,1.223,2982848000,14.468,0.0,0.0,0.0,28.538
+NFLX,Entertainment,Communication Services,United States,1.25,383938494464,53.153,0.0,0.0,0.0,81.461
+NI,Utilities - Regulated Gas,Utilities,United States,0.507,17445865472,17.881,1.06,0.0278,3.43,131.811
+NLSN,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+NMHLY,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+NOC,Aerospace & Defense,Industrials,United States,0.346,70593601536,101.143,8.24,0.0168,1.59,122.722
+NOK,Communication Equipment,Technology,Finland,0.737,22709440512,3.733,0.14,0.0335,3.5,22.538
+NOV,Oil & Gas Equipment & Services,Energy,United States,1.674,6344014848,16.613,0.3,0.0187,1.25,36.848
+NOW,Software - Application,Technology,United States,0.986,216378048512,45.028,0.0,0.0,0.0,24.166
+NOXL,Real Estate Services,Real Estate,Switzerland,0.0,153611,0.0,0.0,0.0,0.0,0.0
+NRG,Utilities - Independent Power Producers,Utilities,United States,1.088,20127768576,9.125,1.63,0.016,2.99,433.016
+NSC,Railroads,Industrials,United States,1.302,61675282432,60.931,5.4,0.0196,1.98,128.64
+NTAP,Computer Hardware,Technology,United States,1.225,25089994752,5.563,2.08,0.0164,2.81,285.038
+NTRA,Diagnostics & Research,Healthcare,United States,1.529,22509287424,7.077,0.0,0.0,0.0,54.151
+NTRR,Drug Manufacturers - Specialty & Generic,Healthcare,United States,8.29,291790,0.0,0.0,0.0,0.0,0.0
+NTRS,Asset Management,Financial Services,United States,1.073,21790105600,59.854,3.0,0.027,3.15,0.0
+NVR,Residential Construction,Consumer Cyclical,United States,1.201,28138797056,1393.651,0.0,0.0,0.0,24.537
+NVRO,Medical Devices,Healthcare,United States,0.931,160378448,7.309,0.0,0.0,0.0,90.239
+NWL,Household & Personal Products,Consumer Defensive,United States,0.88,4062240256,6.875,0.28,0.0292,5.08,196.259
+O,REIT - Retail,Real Estate,United States,0.996,50023931904,43.942,3.16,0.0546,4.75,68.941
+ODFL,Trucking,Industrials,United States,0.989,47960723456,19.532,1.04,0.0046,0.35,1.437
+OKE,Oil & Gas Midstream,Energy,United States,1.625,64454569984,28.908,3.96,0.0349,6.97,166.619
+OMC,Advertising Agencies,Communication Services,United States,0.968,20488665088,20.253,2.8,0.026700001,3.66,155.236
+ORLY,Specialty Retail,Consumer Cyclical,United States,0.92,71803027456,-24.881,0.0,0.0,0.0,0.0
+OXY,Oil & Gas E&P,Energy,United States,1.608,47372247040,28.126,0.88,0.0174,3.85,79.146
+PAYX,Software - Application,Technology,United States,0.987,52330967040,10.699,3.92,0.026800001,2.72,22.517
+PCAR,Farm & Heavy Construction Machinery,Industrials,United States,0.89,60905426944,35.6,1.2,0.010299999,1.4,83.654
+PEG,Utilities - Regulated Electric,Utilities,United States,0.626,45996130304,32.319,2.4,0.0255,3.38,137.098
+PEP,Beverages - Non-Alcoholic,Consumer Defensive,United States,0.542,223593218048,14.168,5.42,0.0332,2.77,229.605
+PFE,Drug Manufacturers - General,Healthcare,United States,0.615,146350030848,16.288,1.68,0.0641,4.28,73.408
+PG,Household & Personal Products,Consumer Defensive,United States,0.414,423485014016,21.676,4.03,0.0225,2.41,69.338
+PH,Specialty Industrial Machinery,Industrials,United States,1.432,90151624704,100.154,6.52,0.0093,1.46,78.976
+PHM,Residential Construction,Consumer Cyclical,United States,1.641,27952197632,56.308,0.88,0.0064999997,1.04,19.411
+PKG,Packaging & Containers,Consumer Cyclical,United States,0.777,21952806912,47.813,5.0,0.0201,2.97,64.596
+PKI,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+PLD,REIT - Industrial,Real Estate,United States,1.094,107352948736,57.235,3.84,0.032899998,2.44,57.079
+PM,Tobacco,Consumer Defensive,United States,0.56,203527225344,-6.235,5.4,0.040599998,5.34,0.0
+PNR,Specialty Industrial Machinery,Industrials,United Kingdom,1.189,17962262528,21.175,0.92,0.0084,1.43,49.774
+PNW,Utilities - Regulated Electric,Utilities,United States,0.518,10596671488,58.227,3.58,0.0382,4.35,168.24
+PNWRF,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+PPG,Specialty Chemicals,Basic Materials,United States,1.254,29223878656,33.569,2.66,0.0214,1.77,91.282
+PRU,Insurance - Life,Financial Services,United States,1.282,45740314624,85.455,5.2,0.0402,5.01,141.51
+PSX,Oil & Gas Refining & Marketing,Energy,United States,1.319,56356478976,69.547,4.6,0.0343,4.26,67.143
+PVH,Apparel Manufacturing,Consumer Cyclical,United States,2.115,6216295424,92.885,0.15,0.0014,0.13,68.71
+PWR,Engineering & Construction,Industrials,United States,1.009,50554142720,47.903,0.4,0.0011999999,0.24,70.631
+PXD,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+QRVO,Semiconductors,Technology,United States,1.487,6687764480,36.024,0.0,0.0,0.0,57.517
+RCL,Travel Services,Consumer Cyclical,United States,2.6,66154004480,26.202,1.6,0.0066000004,2.52,298.394
+RE,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+REG,REIT - Retail,Real Estate,United States,1.218,13697196032,36.14,2.82,0.0373,4.24,66.82
+REGN,Biotechnology,Healthcare,United States,0.142,84296564736,272.04,0.0,0.0,0.0,9.221
+RF,Banks - Regional,Financial Services,United States,1.182,24125794304,18.627,1.0,0.0367,3.98,0.0
+RHI,Staffing & Employment Services,Industrials,United States,1.224,7714577408,14.522,2.12,0.028399998,2.24,16.213
+RIBT,Packaged Foods,Consumer Defensive,United States,0.649,3001,-0.481,0.0,0.0,0.0,0.0
+RJF,Asset Management,Financial Services,United States,1.002,34166697984,54.083,1.8,0.0106,1.45,45.916
+RL,Apparel Manufacturing,Consumer Cyclical,United States,1.504,13917975552,39.329,3.3,0.0143,2.23,109.237
+RLI,Insurance - Property & Casualty,Financial Services,United States,0.383,8160727040,38.165,1.16,0.0066000004,0.88,6.657
+RMD,Medical Instruments & Supplies,Healthcare,United States,0.687,35965517824,35.394,2.12,0.0085,0.84,16.366
+ROK,Specialty Industrial Machinery,Industrials,United States,1.359,33530974208,30.931,5.24,0.0178,1.72,111.327
+ROL,Personal Services,Consumer Cyclical,United States,0.701,24560447488,2.721,0.66,0.013099999,1.05,63.703
+ROP,Software - Application,Technology,United States,1.029,60993998848,172.672,3.3,0.0058,0.53,45.241
+ROST,Apparel Retail,Consumer Cyclical,United States,1.1,51877621760,14.534,1.47,0.010299999,0.95,114.299
+RSG,Waste Management,Industrials,United States,0.707,67318284288,35.84,2.32,0.0106,1.45,114.524
+RSNHF,Banks - Regional,Financial Services,Japan,0.493,18522662912,1200.043,0.15,0.019299999,3.67,0.0
+RXMD,Pharmaceutical Retailers,Healthcare,United States,-0.214,13487879,2.721,0.0,0.0,0.0,8.934
+SBUX,Restaurants,Consumer Cyclical,United States,0.962,115143049216,-6.572,2.44,0.0238,2.05,0.0
+SCHW,Capital Markets,Financial Services,United States,0.952,148755972096,20.783,1.0,0.0121,1.37,144.242
+SEE,Packaging & Containers,Consumer Cyclical,United States,1.347,5333055488,5.294,0.8,0.0219,1.74,601.128
+SEGXF,REIT - Industrial,Real Estate,United Kingdom,0.804,13812701184,8.759,0.36,0.0353,2.65,42.096
+SHW,Specialty Chemicals,Basic Materials,United States,1.175,99580157952,16.585,2.86,0.0072000003,0.84,291.114
+SIVB,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+SLB,Oil & Gas Equipment & Services,Energy,United States,1.532,61703892992,15.233,1.1,0.025,2.89,57.141
+SLG,REIT - Office,Real Estate,United States,1.8,5518208000,51.113,3.0,0.038399998,6.93,116.952
+SNPS,Software - Infrastructure,Technology,United States,1.076,87002357760,50.187,0.0,0.0,0.0,8.7
+SO,Utilities - Regulated Electric,Utilities,United States,0.509,96737861632,30.39,2.88,0.0323,3.97,176.35
+SONC,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+SPG,REIT - Retail,Real Estate,United States,1.768,68158980096,8.19,8.4,0.0458,6.24,780.789
+SRE,Utilities - Diversified,Utilities,United States,0.759,58715955200,45.504,2.48,0.026500002,3.12,96.747
+SRG,Real Estate Services,Real Estate,United States,0.0,256864800,7.42,0.0,0.0,0.0,66.859
+STT,Asset Management,Financial Services,United States,1.48,28816310272,78.221,3.04,0.0309,3.1,0.0
+STX,Computer Hardware,Technology,Singapore,1.07,21826721792,-6.148,2.88,0.028399998,3.86,0.0
+STZ-B,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+SWK,Tools & Accessories,Industrials,United States,1.255,13789748224,57.472,3.28,0.0367,2.69,79.081
+SWKS,Semiconductors,Technology,United States,1.205,14132218880,39.654,2.8,0.0335,1.91,15.691
+SYF,Credit Services,Financial Services,United States,1.593,26138609664,37.916,1.0,0.0148,2.64,0.0
+SYK,Medical Devices,Healthcare,United States,0.92,148536999936,52.855,3.2,0.0082,1.04,79.443
+T,Telecom Services,Communication Services,United States,0.73,163328278528,14.266,1.11,0.0479,7.08,125.151
+TAP,Beverages - Brewers,Consumer Defensive,United States,0.827,12561254400,64.626,1.76,0.028399998,2.65,48.838
+TCYSF,Software - Application,Technology,Canada,0.653,470085568,4.518,0.24,0.0074,0.84,2.873
+TEL,Electronic Components,Technology,Ireland,1.328,46234288128,41.195,2.6,0.0172,1.71,37.194
+TIME,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+TJX,Apparel Retail,Consumer Cyclical,United States,0.893,143176286208,6.442,1.5,0.0125,1.31,162.567
+TMO,Diagnostics & Research,Healthcare,United States,0.792,202702045184,128.084,1.56,0.0029,0.22,72.329
+TMUS,Telecom Services,Communication Services,United States,0.496,284192407552,55.168,3.52,0.0143,0.0,182.272
+TRAUF,Infrastructure Operations,Industrials,Australia,0.634,27500820480,3.57,0.42,0.0476,3.6,175.073
+TROW,Asset Management,Financial Services,United States,1.423,27539945472,46.138,4.96,0.0401,3.4,3.247
+TRV,Insurance - Property & Casualty,Financial Services,United States,0.63,59936141312,122.009,4.2,0.015800001,2.24,29.004
+TSCO,Specialty Retail,Consumer Cyclical,United States,0.814,31016429568,21.406,4.4,0.0155,1.4,233.038
+TSN,Farm Products,Consumer Defensive,United States,0.775,22891040768,51.682,2.0,0.031,2.79,52.863
+TTWO,Electronic Gaming & Multimedia,Communication Services,United States,0.85,32995045376,33.04,0.0,0.0,0.0,70.922
+TW,Capital Markets,Financial Services,United States,1.009,29465237504,26.743,0.4,0.003,0.44,0.477
+TWTR,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+TXN,Semiconductors,Technology,United States,0.98,183829970944,18.934,5.44,0.0271,2.64,84.399
+TXT,Aerospace & Defense,Industrials,United States,1.244,15835303936,37.471,0.08,0.00090000004,0.14,56.941
+TYL,Software - Application,Technology,United States,0.771,26820921344,76.546,0.0,0.0,0.0,19.597
+UA,Apparel Manufacturing,Consumer Cyclical,United States,1.662,4163864320,4.592,0.0,0.0,0.0,67.085
+UAL,Airlines,Industrials,United States,1.393,32037455872,34.779,0.0,0.0,0.0,291.676
+UDR,REIT - Residential,Real Estate,United States,0.847,17208881152,10.519,1.7,0.037100002,3.6,131.116
+UEEC,Medical Instruments & Supplies,Healthcare,United States,0.0,19006308,-0.007,0.0,0.0,0.0,0.0
+UHS,Medical Care Facilities,Healthcare,United States,1.297,13236327424,100.138,0.8,0.0039,0.51,76.373
+ULTA,Specialty Retail,Consumer Cyclical,United States,1.326,18563899392,49.644,0.0,0.0,0.0,82.149
+UNM,Insurance - Life,Financial Services,United States,0.75,13971257344,59.357,1.68,0.0218,3.95,32.873
+UNP,Railroads,Industrials,United States,1.056,146276564992,27.325,5.36,0.0219,2.15,197.154
+UPS,Integrated Freight & Logistics,Industrials,United States,0.982,114398863360,19.762,6.52,0.048,3.29,155.425
+URI,Rental & Leasing Services,Industrials,United States,1.682,56244629504,130.604,6.52,0.0075,0.0,167.987
+USB,Banks - Regional,Financial Services,United States,1.04,82639667200,33.351,2.0,0.0375,4.11,0.0
+V,Credit Services,Financial Services,United States,0.952,612343021568,20.077,2.36,0.0075,0.67,53.239
+VFC,Apparel Manufacturing,Consumer Cyclical,United States,1.545,8163569152,3.613,0.36,0.0178,4.45,524.646
+VMC,Building Materials,Basic Materials,United States,0.805,37883678720,59.569,1.84,0.0064,0.86,49.475
+VRSK,Consulting Services,Industrials,United States,0.862,41380220928,2.119,1.56,0.0053,0.6,1069.413
+VRSN,Software - Infrastructure,Technology,United States,0.911,18924298240,-19.716,0.0,0.0,0.0,0.0
+VTR,REIT - Healthcare Facilities,Real Estate,United States,1.39,26265956352,23.277,1.8,0.028099999,4.36,136.679
+VZ,Telecom Services,Communication Services,United States,0.418,184632066048,22.882,2.71,0.061100002,5.55,182.615
+WAT,Diagnostics & Research,Healthcare,United States,0.973,23067600896,27.003,0.0,0.0,0.0,120.473
+WBA,Pharmaceutical Retailers,Healthcare,United States,0.669,7794348032,12.089,1.0,0.1109,6.01,277.898
+WDC,Computer Hardware,Technology,United States,1.394,25361139712,33.65,0.0,0.0,3.23,0.0
+WEC,Utilities - Regulated Electric,Utilities,United States,0.438,31771305984,38.191,3.34,0.033099998,3.1,155.836
+WHR,"Furnishings, Fixtures & Appliances",Consumer Cyclical,United States,1.424,6133640192,55.309,7.0,0.062800005,4.29,245.308
+WM,Waste Management,Industrials,United States,0.747,90462568448,19.88,3.0,0.013099999,1.63,208.894
+WMB,Oil & Gas Midstream,Energy,United States,1.062,68709502976,10.167,1.9,0.0325,5.9,182.368
+WRB,Insurance - Property & Casualty,Financial Services,United States,0.621,24386230272,22.105,0.31,0.0047999998,0.62,36.284
+WRK,0,0,0,0.0,0,0.0,0.0,0.0,0.0,0.0
+WSPOF,Engineering & Construction,Industrials,Canada,0.824,23003109376,54.726,1.08,0.0061000003,1.06,82.016
+WST,Medical Instruments & Supplies,Healthcare,United States,1.003,23425026048,37.96,0.84,0.0026,0.24,11.188
+WU,Credit Services,Financial Services,United States,0.888,3746236672,1.932,0.94,0.0854,5.84,396.308
+WY,REIT - Specialty,Real Estate,United States,1.428,23282700288,13.659,0.8,0.0248,2.78,51.335
+WYNN,Resorts & Casinos,Consumer Cyclical,United States,1.802,10566398976,-2.583,1.0,0.0106,2.28,0.0
+XEL,Utilities - Regulated Electric,Utilities,United States,0.398,41057136640,33.708,2.19,0.030199999,2.92,154.33
+XLEFF,Oil & Gas E&P,Energy,Canada,0.0,1111638,-5.148,0.0,0.0,0.0,0.0
+XOM,Oil & Gas Integrated,Energy,United States,0.88,517917376512,61.112,3.96,0.0336,5.0,15.394
+XYL,Specialty Industrial Machinery,Industrials,United States,1.05,30846726144,43.593,1.44,0.0114,1.16,19.84
+YUM,Restaurants,Consumer Cyclical,United States,1.095,38885851136,-27.407,2.68,0.019299999,1.81,0.0
+ZBH,Medical Devices,Healthcare,United States,1.021,21979760640,61.997,0.96,0.0086,0.75,53.611
+ZION,Banks - Regional,Financial Services,United States,1.06,8874271744,40.251,1.72,0.028399998,3.47,0.0
+ZTS,Drug Manufacturers - Specialty & Generic,Healthcare,United States,0.896,80394125312,11.591,1.73,0.0099,0.68,129.442

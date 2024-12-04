@@ -13,33 +13,32 @@ from requests_ratelimiter import LimiterSession, RequestRate, Limiter, Duration
 
 
 def get_data_from_kaggle(market = 'sp500', start_date = '01-01-2010' ):
-
     path = kagglehub.dataset_download("paultimothymooney/stock-market-data")
-    path_to_files = path + f"\\stock_market_data\\{market}\\csv\\*.csv"
+    path = path + f"\\stock_market_data\\{market}\\csv\\*.csv"
+    csv_file_list = glob.glob(path)
+    stock_list = []
 
-    csv_files = glob.glob(path_to_files)
-    dataframes = []
-
-    for file in csv_files:
-        stock = file.split("\\")[-1].replace(".csv", "")
-
+    for file in csv_file_list:
+        stock_name = file.split("\\")[-1].replace(".csv", "")
         df = pd.read_csv(file)
-        df['Stock Name'] = stock
-        
-        dataframes.append(df)
-    stock_df = pd.concat(dataframes, ignore_index=True)
+        df['Stock Name'] = stock_name
+        stock_list.append(df)
+
+    stock_df = pd.concat(stock_list, ignore_index=True)
     stock_df['Date'] = pd.to_datetime(stock_df['Date'])
     stock_df = stock_df[stock_df['Date'] >= start_date]
+    stock_df = stock_df.dropna()
+
     return stock_df
 
 def restructure_date_information(df):
     df["Month"] = pd.to_datetime(df['Date']).dt.month 
-    df["Month"] = df["Month"]- 1
     df["Day"] = pd.to_datetime(df['Date']).dt.day
-    df["Day"] = df["Day"]- 1
-    df["Day of The Year"] = df["Date"].dt.dayofyear
     df["Day of The Week"] = pd.to_datetime(df['Date']).dt.dayofweek
     df["Week of The Year"] = pd.to_datetime(df['Date']).dt.isocalendar().week
+
+    df["Day"] = df["Day"]- 1
+    df["Month"] = df["Month"]- 1
     df["Week of The Year"] = df["Week of The Year"]- 1
     df = df.drop('Date', axis=1, inplace=False)
     return df
@@ -51,12 +50,11 @@ def get_static_df(stock_df, static_variables):
     limiter = Limiter(RequestRate(5, 1))
     session = LimiterSession(limiter=limiter)
     for stock in stock_list:
-        stock = yf.Ticker(stock, session=session)
-        info = stock.info
-        selected_info = {var: info.get(var, None) for var in static_variables.keys()}
-        static_info[stock.ticker] = selected_info
+        stock_info = yf.Ticker(stock, session=session).info
+        selected_info = {i: stock_info.get(i, None) for i in static_variables.keys()}
+        static_info[stock] = selected_info
     static_df = pd.DataFrame.from_dict(static_info).T
-    static_df.fillna(0, inplace=True)
+    static_df = static_df.fillna(0)
     return static_df
 
 def scale_stock_data(stock_df, column):
@@ -71,10 +69,7 @@ def scale_stock_data(stock_df, column):
     out_df = pd.concat(scaled_data, ignore_index=True)
     return out_df, scalar
 
-def stock_quantiles(df, quantiles):
-    result = df.groupby("Stock Name")["Adj Close"].quantile(quantiles).unstack()
-    result.columns = [f"q_{int(q*100)}" for q in quantiles]
-    return result
+
 
 def one_label_scale_static_df(static_df, static_variables):
     cat_variable =  [variable  for variable, value  in static_variables.items() if value == 'Categorical']
@@ -92,6 +87,7 @@ def one_label_scale_static_df(static_df, static_variables):
 def get_feature_length(df, constant):
     cat_variable =  [variable  for variable, value  in constant.items() if value == 'Categorical']
     num_variable =  [variable  for variable, value  in constant.items() if value == 'Numerical']
+
     cat_variable_list = []
     for variable in cat_variable:
         cat_variable_list.append(len(df[variable].unique()))

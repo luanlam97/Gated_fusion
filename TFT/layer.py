@@ -11,8 +11,7 @@ class TFT_embedding(nn.Module):
                         static_cat_feature_num_list = None , 
                         history_cont_feature_num = None, 
                         history_cat_feature_num_list = None,
-                        future_feature_list= None,
-
+                        future_cat_feature_num_list= None,
                         hidden_size = 64):
         super().__init__()
 
@@ -25,38 +24,34 @@ class TFT_embedding(nn.Module):
                 nn.Embedding(i , hidden_size ) for i in history_cat_feature_num_list ])
         
         self.future_feature = nn.ModuleList([
-                nn.Embedding(i , hidden_size ) for i in future_feature_list ])
+                nn.Embedding(i , hidden_size ) for i in future_cat_feature_num_list ])
 
 
-    def forward(self, 
-                static_cont_input, 
-                static_cat_input, 
-                history_cont_input, 
-                history_cat_input, 
-                future_input):
-        static_cont_emb = self.static_cont(static_cont_input)
-
-        static_cat_embs = [emb(static_cat_input[:, i]) 
-                        for i, emb in enumerate(self.static_cat)]
-        static_cat_emb = torch.stack(static_cat_embs, dim=-1)
-
-        history_cont_emb = self.history_cont(history_cont_input)
-
-        history_cat_embs = [emb(history_cat_input[:, :, i]) 
-                                for i, emb in enumerate(self.history_cat)]
-        history_cat_emb = torch.stack(history_cat_embs, dim=-1)
-
-        future_emb =  [emb(future_input[:, :, i]) 
-                                for i, emb in enumerate(self.future_feature)]
-        future_emb = torch.stack(future_emb, dim=-1)
+    def forward(self, static_cont_input, 
+                      static_cat_input, 
+                      history_cont_input, 
+                      history_cat_input, 
+                      future_input):
         
-        static_cont_emb= static_cont_emb.unsqueeze(-1)
-        history_cont_emb =history_cont_emb.unsqueeze(-1)
+        static_cont_embs = self.static_cont(static_cont_input)
+        static_cat_embs = [mod(static_cat_input[:, idx]) 
+                        for idx, mod in enumerate(self.static_cat)]
+        static_cat_embs = torch.stack(static_cat_embs, dim=-1)
+        history_cont_embs = self.history_cont(history_cont_input)
+        history_cat_embs = [mod(history_cat_input[:, :, idx]) 
+                                for idx, mod in enumerate(self.history_cat)]
+        history_cat_embs = torch.stack(history_cat_embs, dim=-1)
+        future_embs =  [mod(future_input[:, :, idx]) 
+                                for idx, mod in enumerate(self.future_feature)]
+        future_embs = torch.stack(future_embs, dim=-1)
 
-        static_input = torch.cat([static_cont_emb , static_cat_emb], dim=-1)
-        history_input = torch.cat([history_cont_emb, history_cat_emb], dim=-1)
+        static_cont_embs= static_cont_embs.unsqueeze(-1)
+        history_cont_embs =history_cont_embs.unsqueeze(-1)
 
-        return static_input, history_input, future_emb
+        static_input = torch.cat([static_cont_embs , static_cat_embs], dim=-1)
+        history_input = torch.cat([history_cont_embs, history_cat_embs], dim=-1)
+
+        return static_input, history_input, future_embs
 
 
 class GRN(nn.Module):
@@ -85,7 +80,8 @@ class GRN(nn.Module):
         if context_size:
             self.linear_conext = nn.Linear(context_size, input_size, bias=False)
     
-    def forward(self, x, context = None):
+    def forward(self, x, 
+                      context = None):
 
         linear1 = self.linear1(x)
 
@@ -104,8 +100,10 @@ class GRN(nn.Module):
 
 
 class GLU(nn.Module):
-    def __init__(self, input_size , hidden_size):
+    def __init__(self, input_size, 
+                       hidden_size):
         super().__init__()
+
         self.linear4 = nn.Linear(input_size, hidden_size)
         self.linear5 = nn.Linear(input_size, hidden_size)
     
@@ -116,15 +114,17 @@ class GLU(nn.Module):
         return x
 
 class Gate_Add_Norm(nn.Module):
-    def __init__(self, input_size , hidden_size):
+    def __init__(self, input_size, 
+                       hidden_size):
         super().__init__()
 
         self.layernorm = nn.LayerNorm( hidden_size)
         self.GLU = GLU(input_size , hidden_size)
     
-    def forward(self, x, residual):
+    def forward(self, x, 
+                      residual):
+        
         gated = self.GLU(x)
-
         output = self.layernorm(gated + residual)
         return output
 
@@ -162,27 +162,23 @@ class InterpretableMultiHeadAttention(nn.Module):
         self.mask = torch.triu(torch.full((v_size, v_size), float('-inf')), 1).to(device)
         self.q_linear = nn.ModuleList(
                             [nn.Linear(hidden_size, self.attention_hidden_size)
-                             for i in range(self.n_head)]
-
-        )
+                             for i in range(self.n_head)])
 
         self.k_linear = nn.ModuleList(
                             [nn.Linear(hidden_size, self.attention_hidden_size)
-                             for i in range(self.n_head)]
-        )
+                             for i in range(self.n_head)])
         self.v_linear = nn.Linear(hidden_size, v_size)
-
-
 
     def forward(self, q, k, v):
 
-        q_list = [q_linear(q)  for  q_linear in self.q_linear  ]
-        k_list = [torch.transpose(k_linear(k),1,2)  for k_linear in self.k_linear  ]
+        q_list = [q_linear(q) for q_linear in self.q_linear]
+        k_list = [torch.transpose(k_linear(k),1,2) for k_linear in self.k_linear]
         v = self.v_linear(v)
         attention_QK = [torch.matmul(q, k) for q,k in zip(q_list,k_list)]
 
-        attention_QK = [ F.softmax(  torch.mul(attention, self.div) + self.mask, dim =-1 )       for i, attention in enumerate(attention_QK)   ]
-        attention_QKV = [   torch.matmul(attention, v)    for  attention in  attention_QK      ]
+        attention_QK = [F.softmax(torch.mul(attention, self.div) + self.mask, dim =-1) 
+                        for i, attention in enumerate(attention_QK)]
+        attention_QKV = [torch.matmul(attention, v) for attention in attention_QK]
         attention_QKV = torch.stack(attention_QKV, dim=-1)
         attention_QKV = torch.mean(attention_QKV, dim=-1) 
         return attention_QKV

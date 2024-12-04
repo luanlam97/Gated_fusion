@@ -6,7 +6,7 @@ class TFT(nn.Module):
                         static_cat_feature_num_list = None , 
                         history_cont_feature_num = None, 
                         history_cat_feature_num_list = None,
-                        future_feature_list= None,
+                        future_cat_feature_num_list= None,
                         history_len = None,
                         future_len = None,
                         dropout = 0,
@@ -18,15 +18,15 @@ class TFT(nn.Module):
         self.seq_len = future_len + history_len
 
         self.tft_embed =  TFT_embedding(static_cat_feature_num_list= static_cat_feature_num_list,
-             static_cont_feature_num=static_cont_feature_num,
-             history_cat_feature_num_list= history_cat_feature_num_list,
-             history_cont_feature_num=history_cont_feature_num,
-             future_feature_list=future_feature_list,
-             hidden_size=hidden_size)
+                                        static_cont_feature_num=static_cont_feature_num,
+                                        history_cat_feature_num_list= history_cat_feature_num_list,
+                                        history_cont_feature_num=history_cont_feature_num,
+                                        future_cat_feature_num_list=future_cat_feature_num_list,
+                                        hidden_size=hidden_size)
 
         static_variation_nums_dim = 1 + len(static_cat_feature_num_list)
         history_variation_nums_dim = 1 + len(history_cat_feature_num_list)
-        future_variation_nums_dim =  len(future_feature_list)
+        future_variation_nums_dim =  len(future_cat_feature_num_list)
 
         self.cs =  VariationSelection(hidden_size = hidden_size,input_dim = static_variation_nums_dim )
         self.ce =  VariationSelection(hidden_size = hidden_size,input_dim = static_variation_nums_dim )
@@ -59,12 +59,8 @@ class TFT(nn.Module):
 
         self.output_linear = nn.Linear(hidden_size, 3 )
     def forward(self, static_cont_input, static_cat_input,history_cont_input, history_cat_input, future_input):
-        static_input, history_input, future_input = self.tft_embed (static_cont_input, 
-                                                                static_cat_input,
-                                                                history_cont_input, 
-                                                                history_cat_input, 
-                                                                future_input)
-        
+        static_input, history_input, future_input = self.tft_embed(static_cont_input, static_cat_input, history_cont_input, history_cat_input, future_input)
+            
         cs  = self.cs(static_input)  
         ce  = self.ce(static_input)  
         cc  = self.cc(static_input) 
@@ -87,7 +83,7 @@ class TFT(nn.Module):
         combined = torch.cat([gate_add_norm_history,gate_add_norm_future], dim = 1)
         static_enriched = self.GRN(combined,ce)
 
-        attention = self.InterpAttention( static_enriched,static_enriched,static_enriched       )
+        attention = self.InterpAttention( static_enriched,static_enriched,static_enriched)
         attention_norm = self.attention_layernorm(attention)
         attention_gated =  self.gate_add_norm_attention(attention_norm,static_enriched )
         attention_GRN = self.attention_GRN(attention_gated)
