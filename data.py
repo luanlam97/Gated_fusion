@@ -3,7 +3,6 @@ import kagglehub
 import pandas as pd
 import torch
 from torch.utils.data import Dataset
-#from transformers import AutoTokenizer,  AutoModelForSequenceClassification
 
 class TFT_Dataset(Dataset):
     def __init__(self , stock_df, 
@@ -51,6 +50,7 @@ class TFT_Dataset(Dataset):
                     self.data_index.append( (name, idx)) 
 
     def __len__(self):
+
         return len(self.data_index)
 
     def __getitem__(self, idx):
@@ -64,6 +64,24 @@ class TFT_Dataset(Dataset):
 
         future_input = self.future_data[stock_name][idx + self.history_length: idx + self.history_length + self.prediction_length]
         prediction = self.prediction[stock_name][idx+ self.history_length : idx + self.history_length + self.prediction_length]
+
+        ####################################################################################
+        # image creation here
+        # history_cont_input is the stock history continuous data aka: open close, volume etc 
+        # history_cont_input is a list of history_length day
+        # so since default history_length = 90, history_cont_input is [day_0, day_1,....    day_89]
+        # each day_x is a list of the stock features: [open_value, high_value, low_value, volume_value]
+        # all data is scaled min-max in my preprocessing, (we can change to any other scalar if need)
+        # You can convert image to np array then to torch tensor to avoid saving the images. 
+        #
+        # prediction variable is the 'Adjusted Close' target prediction (We can just pick 'Close' if needed, just change the parameters in constant.py)
+        #           
+        # You can build the image here tbh since history_cont_input is already processed
+        # You can use any of the self. variable           
+        # I believe we have to use same history_length for all model, aka same window length
+        # but models can have different prediction lengths.          
+        #
+        ####################################################################################
 
         static_cont_input = torch.tensor(static_cont_input.values, device= self.device).float()
         static_cat_input = torch.tensor(static_cat_input.values, device= self.device)

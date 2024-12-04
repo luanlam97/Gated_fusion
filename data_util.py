@@ -7,7 +7,6 @@ import yfinance as yf
 import glob
 from sklearn.preprocessing import  LabelEncoder, MinMaxScaler
 from torch.utils.data import  DataLoader
-#from transformers import AutoTokenizer,  AutoModelForSequenceClassification
 from torch.nn.functional import softmax
 from requests_ratelimiter import LimiterSession, RequestRate, Limiter, Duration
 
