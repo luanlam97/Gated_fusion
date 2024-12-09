@@ -3,6 +3,12 @@ import kagglehub
 import pandas as pd
 import torch
 from torch.utils.data import Dataset
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import torch
+from PIL import Image
+from torchvision import transforms
 
 class TFT_Dataset(Dataset):
     def __init__(self , stock_df, 
@@ -81,6 +87,66 @@ class TFT_Dataset(Dataset):
         # I believe we have to use same history_length for all model, aka same window length
         # but models can have different prediction lengths.          
         #
+
+        # will plot open prices throughout each day, use it for prediction
+        open_prices = np.array(history_cont_input)[:, 0]   # y-axis: open prices
+        days = np.arange(self.history_length)  # x-axis: day indices (0, 1, ..., history_length-1)
+
+        # plot the image
+        plt.switch_backend('Agg') # make ssure it doesn't print on my output to clog it
+        fig, ax = plt.subplots(figsize=(6, 6))
+        ax.plot(days, open_prices)
+        ax.axis('off')  # Hide the axis
+
+        # https://stackoverflow.com/questions/67955433/how-to-get-matplotlib-plot-data-as-numpy-array
+
+        fig.canvas.draw()
+        image = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+        image = image.reshape(fig.canvas.get_width_height()[::-1] + (3,))  # H x W x C format
+
+        pil_image = Image.fromarray(image)
+        img = transforms.Compose([
+                        transforms.Resize((224 , 224 )), 
+                        transforms.ToTensor(),
+                        transforms.Normalize(0.5, 0.5),
+                    ])(pil_image).to(self.device)
+
+        # # patching
+        # grid_size = 4  # 4x4 grid
+        # image_size = 64 # (arbitrary for now)
+        # image_resized = np.resize(image_gray, (image_size, image_size)) # resize image
+        # patch_size = image_size // grid_size  # size of each patch (16x16)
+
+        # # split image into 4x4 grid of 16x16 patches
+        # patches = []
+        # for i in range(grid_size):
+        #     for j in range(grid_size):
+        #         patch = image_resized[i * patch_size:(i + 1) * patch_size, j * patch_size:(j + 1) * patch_size]
+        #         patches.append(patch)
+
+        # # convert patches to tensor
+        # # use stack to turn into tenssor instead of 
+        # patches_tensor = torch.tensor(np.stack(patches), dtype=torch.float32)  # shape: (16, 16, 16)
+
+        # # check tensor shape (should be (16, 16, 16) for 16 patches each 16x16
+        # # print("Tensor Shape:", patches_tensor.shape)
+        # plt.close(fig)  # for memory
+
+
+        # get the adjusted close price at day 90
+        price_day_90 = self.prediction[stock_name][idx+ self.history_length]
+
+        # get the average adjusted close price at 15 days after 90
+        prices_day_90_to_105 = self.prediction[stock_name][idx+ self.history_length :idx+ self.history_length + self.prediction_length ]
+        avg_price_day_90_to_105 = np.mean(prices_day_90_to_105)
+
+
+        # calculate the target: 1 if price goes up, 0 if it goes down
+        # at the end of that 15 days
+        prediction_classification = [1,0] if avg_price_day_90_to_105 > price_day_90 else [0,1]
+        prediction_classification = torch.tensor(prediction_classification, device=self.device).float() # add extra dimension at -1
+        # squeeze deletes dimension
+
         ####################################################################################
 
         static_cont_input = torch.tensor(static_cont_input.values, device= self.device).float()
@@ -91,5 +157,9 @@ class TFT_Dataset(Dataset):
 
         future_input = torch.tensor(future_input , device= self.device)
         prediction = torch.tensor(prediction, device= self.device)
+        img.to
+        return static_cont_input, static_cat_input,history_cont_input, history_cat_input,future_input, prediction, img, prediction_classification
 
-        return static_cont_input, static_cat_input,history_cont_input, history_cat_input, future_input, prediction
+
+
+
