@@ -5,7 +5,8 @@ import pandas as pd
 import time
 import yfinance as yf
 import glob
-from sklearn.preprocessing import  LabelEncoder, MinMaxScaler
+import numpy as np
+from sklearn.preprocessing import  LabelEncoder, MinMaxScaler,StandardScaler
 from torch.utils.data import  DataLoader
 from torch.nn.functional import softmax
 from requests_ratelimiter import LimiterSession, RequestRate, Limiter, Duration
@@ -45,7 +46,7 @@ def restructure_date_information(df):
 def get_static_df(stock_df, static_variables):
     stock_list = stock_df["Stock Name"].unique()
     static_info = {}
-
+    stock_list = np.append(stock_list, 'TSLA')
     limiter = Limiter(RequestRate(5, 1))
     session = LimiterSession(limiter=limiter)
     for stock in stock_list:
@@ -56,11 +57,15 @@ def get_static_df(stock_df, static_variables):
     static_df = static_df.fillna(0)
     return static_df
 
-def scale_stock_data(stock_df, column):
+def scale_stock_data(stock_df, column, mode = 'min_max'):
     scalar = {}
     scaled_data = [] 
     for stock in stock_df["Stock Name"].unique():
-        scaler = MinMaxScaler()
+        if mode == 'min_max':
+
+            scaler = MinMaxScaler()
+        else:
+            scaler = StandardScaler()
         stock_data = stock_df[stock_df['Stock Name'] == stock].copy()
         stock_data[column] = scaler.fit_transform(stock_data[column])
         scaled_data.append(stock_data)

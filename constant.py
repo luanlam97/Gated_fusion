@@ -40,3 +40,22 @@ class Constant():
         }
 
         self.columns_to_scale = ['Open',	'High',	'Low',	'Close',	'Adjusted Close',	'Volume']
+
+        self.autoformer_future_feature ={
+            "Open" : "Numerical",
+            "High" : "Numerical",
+            "Low" : "Numerical",
+            "Close": "Numerical",
+            'Adjusted Close':"Numerical",
+
+            }
+        self.autoformer_model_config ={
+            'input_dim' : 5,
+            'd_model' : 128,
+            'n_heads' : 8,
+            'ff_dim' : 128,
+            'num_layers' : 2,
+            'kernel_size' : 5,
+            'target_len' : 7,
+            'dropout' : 0.01
+        } 
