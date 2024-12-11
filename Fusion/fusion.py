@@ -6,18 +6,35 @@ import torch.nn.functional as F
 from torch import Tensor
 from .layer import *
 
-class CrossFusion(nn.Module):
-    def __init__(self, n_head, num_model, seq_list, hidden_size ,device):
+class Model_Fusion(nn.Module):
+    def __init__(self, tft_model, autoformer_model, n_head,hidden_size,device,output = 3):
+
         super().__init__()
+        self.tft_model = tft_model
+        self.autoformer_model = autoformer_model
 
-        self.cross_list = nn.ModuleList(
-                            [CrossAttention(n_head = n_head, q_seq_len= seq_list[0] , k_v_seq_len=seq_list[i+1]  ,hidden_size = hidden_size, device= device     )
-                             for i in range(num_model-1)
-                             ])
+        self.hook_outputs = {}
+        self.tft_model.layernorm.register_forward_hook(self.save_hook_output("tft_model"))
+        self.autoformer_model.decoder.layers[-1].dropout.register_forward_hook(self.save_hook_output("autoformer_model"))
+        self.attentionfusion =  AttentionFusion(n_head, num_model = 2, seq_list =[15,7], hidden_size=hidden_size ,device=device)
         
-    def forward(self, model_output_list):
-        q = model_output_list[0]
+        self.layernorm = nn.LayerNorm(hidden_size)
 
-        for i, cross in enumerate(self.cross_list):
-            q = cross(q, k=model_output_list[i+1], v=model_output_list[i+1])
-        return q    
+        self.glu = GLU(hidden_size,hidden_size)
+        self.linear_output = nn.Linear(hidden_size,output)
+    def save_hook_output(self, layer_name):
+        def hook_fn(module, input, output):
+            self.hook_outputs[layer_name] = output
+        return hook_fn
+
+    def forward(self,  static_cont_input, static_cat_input,history_cont_input, history_cat_input,future_input, tft_prediction, autoformer_feature_input, autoformer_prediction):
+
+        tft_output = self.tft_model(static_cont_input, static_cat_input,history_cont_input, history_cat_input, future_input)  # Pass through Model A
+        autoformer_output = self.autoformer_model(autoformer_feature_input, autoformer_prediction )  # Pass through Model B
+        self.hook_outputs['autoformer_model'] = self.hook_outputs['autoformer_model'].permute(1, 0, 2)
+        model_hidden_list =  list(self.hook_outputs.values())
+        fusion = self.attentionfusion(model_hidden_list)
+        glu = self.glu(fusion)
+        output = self.layernorm(self.hook_outputs['tft_model']  + glu)
+        output = self.linear_output(output)
+        return output

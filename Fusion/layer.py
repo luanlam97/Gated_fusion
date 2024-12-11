@@ -51,3 +51,33 @@ class CrossAttention(nn.Module):
 
         output = attention_output * q_sigmoid
         return output
+
+class AttentionFusion(nn.Module):
+    def __init__(self, n_head, num_model, seq_list, hidden_size ,device):
+        super().__init__()
+
+        self.cross_list = nn.ModuleList(
+                            [CrossAttention(n_head = n_head, q_seq_len= seq_list[0] , k_v_seq_len=seq_list[i+1]  ,hidden_size = hidden_size, device= device     )
+                             for i in range(num_model-1)
+                             ])
+        
+    def forward(self, model_output_list):
+        q = model_output_list[0]
+
+        for i, cross in enumerate(self.cross_list):
+            q = cross(q, k=model_output_list[i+1], v=model_output_list[i+1])
+        return q    
+
+class GLU(nn.Module):
+    def __init__(self, input_size, 
+                       hidden_size):
+        super().__init__()
+
+        self.linear4 = nn.Linear(input_size, hidden_size)
+        self.linear5 = nn.Linear(input_size, hidden_size)
+    
+    def forward(self, x):
+        linear4 = self.linear4(x)
+        linear5 = self.linear5(x)
+        x = F.sigmoid(linear4) * linear5
+        return x
