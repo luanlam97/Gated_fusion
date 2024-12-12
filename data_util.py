@@ -5,8 +5,7 @@ import pandas as pd
 import time
 import yfinance as yf
 import glob
-import numpy as np
-from sklearn.preprocessing import  LabelEncoder, MinMaxScaler,StandardScaler
+from sklearn.preprocessing import  LabelEncoder, MinMaxScaler
 from torch.utils.data import  DataLoader
 from torch.nn.functional import softmax
 from requests_ratelimiter import LimiterSession, RequestRate, Limiter, Duration
@@ -14,12 +13,13 @@ from requests_ratelimiter import LimiterSession, RequestRate, Limiter, Duration
 
 def get_data_from_kaggle(market = 'sp500', start_date = '01-01-2010' ):
     path = kagglehub.dataset_download("paultimothymooney/stock-market-data")
-    path = path + f"\\stock_market_data\\{market}\\csv\\*.csv"
+    path = path + f"/stock_market_data/{market}/csv/*.csv"
+    
     csv_file_list = glob.glob(path)
     stock_list = []
 
     for file in csv_file_list:
-        stock_name = file.split("\\")[-1].replace(".csv", "")
+        stock_name = file.split("/")[-1].replace(".csv", "")
         df = pd.read_csv(file)
         df['Stock Name'] = stock_name
         stock_list.append(df)
@@ -46,7 +46,7 @@ def restructure_date_information(df):
 def get_static_df(stock_df, static_variables):
     stock_list = stock_df["Stock Name"].unique()
     static_info = {}
-    stock_list = np.append(stock_list, 'TSLA')
+
     limiter = Limiter(RequestRate(5, 1))
     session = LimiterSession(limiter=limiter)
     for stock in stock_list:
@@ -57,15 +57,11 @@ def get_static_df(stock_df, static_variables):
     static_df = static_df.fillna(0)
     return static_df
 
-def scale_stock_data(stock_df, column, mode = 'min_max'):
+def scale_stock_data(stock_df, column):
     scalar = {}
     scaled_data = [] 
     for stock in stock_df["Stock Name"].unique():
-        if mode == 'min_max':
-
-            scaler = MinMaxScaler()
-        else:
-            scaler = StandardScaler()
+        scaler = MinMaxScaler()
         stock_data = stock_df[stock_df['Stock Name'] == stock].copy()
         stock_data[column] = scaler.fit_transform(stock_data[column])
         scaled_data.append(stock_data)
