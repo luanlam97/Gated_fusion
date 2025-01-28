@@ -28,9 +28,6 @@ class CrossAttention(nn.Module):
 
         self.sigmoid = nn.Sigmoid()
 
-
-
-
     def forward(self, q, k, v):
 
         q_list = [q_linear(q) for q_linear in self.q_linear]
